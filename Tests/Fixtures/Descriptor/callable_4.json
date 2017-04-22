@@ -1,0 +1,6 @@
+{
+    "type": "function",
+    "name": "staticMethod",
+    "class": "Knp\\Tests\\Console\\Descriptor\\CallableClass",
+    "static": true
+}

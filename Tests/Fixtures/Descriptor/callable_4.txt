@@ -1,0 +1,1 @@
+Knp\Tests\Console\Descriptor\CallableClass::staticMethod()

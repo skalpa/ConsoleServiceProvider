@@ -2,6 +2,9 @@
 
 namespace Knp\Provider;
 
+use Knp\Command\Debug\DebugContainerCommand;
+use Knp\Command\Debug\DebugEventCommand;
+use Knp\Command\Debug\DebugRouterCommand;
 use Knp\Console\Application as ConsoleApplication;
 use Knp\Console\ConsoleEvent;
 use Knp\Console\ConsoleEvents;
@@ -25,7 +28,20 @@ class ConsoleServiceProvider implements ServiceProviderInterface
         // Assume we are in vendor/knplabs/console-service-provider/Knp/Provider
         $app['console.project_directory'] = __DIR__.'/../../../../..';
         $app['console.class'] = ConsoleApplication::class;
-        $app['console.command.ids'] = [];
+
+        $app['console.command.debug.container'] = function () {
+            return new DebugContainerCommand();
+        };
+
+        $app['console.command.debug.router'] = function () {
+            return new DebugRouterCommand();
+        };
+
+        $app['console.command.debug.event_dispatcher'] = function () {
+            return new DebugEventCommand();
+        };
+
+        $app['console.command.ids'] = ['console.command.debug.container', 'console.command.debug.router', 'console.command.debug.event_dispatcher'];
 
         $app['console'] = function () use ($app) {
             /** @var ConsoleApplication $console */

@@ -1,0 +1,5 @@
+{
+    "type": "function",
+    "name": "method",
+    "class": "Knp\\Tests\\Console\\Descriptor\\CallableClass"
+}

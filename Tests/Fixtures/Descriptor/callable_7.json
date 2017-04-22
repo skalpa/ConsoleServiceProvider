@@ -1,0 +1,4 @@
+{
+    "type": "object",
+    "name": "Knp\\Tests\\Console\\Descriptor\\CallableClass"
+}
